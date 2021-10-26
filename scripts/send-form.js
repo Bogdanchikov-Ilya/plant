@@ -13,6 +13,7 @@ document.querySelector('.btn-form').addEventListener('click', (e) => {
       })
       .then((json) => {
         document.querySelector('.loader__wrapper').style.display = 'none'
+        document.querySelector('input').value = ''
         return json
       })
     let result = await res
