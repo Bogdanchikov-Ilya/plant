@@ -1,4 +1,5 @@
 document.querySelector('button').addEventListener('click', (e) => {
+  e.preventDefault()
   let scanner = new Instascan.Scanner({  video: document.getElementById('preview'), scanPeriod: 5, mirror: true });
   Instascan.Camera.getCameras().then(function (cameras){
     document.querySelector('.array').innerHTML = cameras.length

@@ -66,7 +66,27 @@ label{
 
 
 
+/*create user*/
 
+.create-worker-form{
+  margin-top: 4vw;
+}
+
+.create-worker-form > .form-item{
+  margin-bottom: 1vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.create-worker-form > {
+  margin-bottom: 1vw;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+/*preloader*/
 
 .loader__wrapper{
   display:  none;

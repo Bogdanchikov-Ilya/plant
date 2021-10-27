@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <title>Добавить сотрудника</title>
+</head>
+<body>
+  <div class="loader__wrapper">
+    <div class="loader"></div>
+  </div>
+  <header>
+    <div class="container">
+      <div class="header-wrapper">
+        <a href="index.html">Главная</a>
+        <a href="create-worker.html">Добавить сотрудника</a>
+        <a href="create-item.html">Добавить товар</a>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <form action="#" id="create-worker-form" class="create-worker-form">
+      <div class="form-item">
+        <label for="name">Имя</label>
+        <input required type="text" id="name">
+      </div>
+      <div class="form-item">
+        <label for="surname">Фамилия</label>
+        <input required type="text" id="surname">
+      </div>
+      <div class="form-item">
+        <label for="patronymic">Отчество</label>
+        <input required type="text" id="patronymic">
+      </div>
+      <div class="form-item">
+        <label for="barcode">Значение штрихкода</label>
+        <input required type="text" id="barcode">
+        <img class="codeimg" id="code128"></img>
+<!--        <button class="generate-code-btn">Сгенерировать код</button>-->
+      </div>
+      <div class="form-item">
+        <label for="bitrixId">Bitrix ID</label>
+        <input required type="text" id="bitrixId">
+      </div>
+
+      <input type="submit" class="create-worker-btn" value="Добавить">
+    </form>
+    <span class="info"></span>
+  </div>
+  <script src="scripts/generateCode.js"></script>
+  <script src="scripts/create-worker.js"></script>
+</body>
+</html>
