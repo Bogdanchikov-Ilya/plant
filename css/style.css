@@ -25,9 +25,11 @@ header{
 }
 
 .main-wrapper{
+  width: 100%;
+  height: 80vh;
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: center;
   flex-direction: column;
 }
 
@@ -115,4 +117,44 @@ label{
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+
+/*main-page*/
+.main-wrapper > .content{
+  display: flex;
+  flex-direction: column;
+}
+
+.main-wrapper > .content > .main-btn{
+  width: auto;
+  height: auto;
+  margin-bottom: 2vw;
+}
+
+
+.main-wrapper > .content > .main-btn > button{
+  margin: auto;
+  font-size: 4vw;
+  width: 40vw;
+  height: auto;
+}
+
+/*read worker code*/
+
+.worker-form-label{
+  font-size: 2.8vw;
+}
+
+.camera-scan-btn{
+  width: 100%;
+  padding: 1vw;
+  margin: auto;
+  margin-top: 1.5vw;
+  font-size: 2vw;
+}
+
+.send-form-btn{
+  height: auto;
+  padding: 2vw;
 }
