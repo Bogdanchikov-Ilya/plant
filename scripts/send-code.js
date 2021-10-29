@@ -39,5 +39,6 @@ document.querySelector('#send-code').addEventListener('submit', (e) => {
       console.log('Переход в БД')
     }
     console.log(result)
+    document.querySelector('.main-wrapper').innerHTML = `<h1 center>${result.res.resText}</h1>`
   }
 })
