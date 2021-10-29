@@ -16,13 +16,16 @@ document.querySelector('#create-worker-form').addEventListener('submit', (e) => 
       return res.json()
     }).then((json) => {
       document.querySelector('.loader__wrapper').style.display = 'none'
-      // document.querySelector('.create-worker-form').reset()
+      document.querySelector('.create-worker-form').reset()
       return json
     })
     let result = await res
     console.log(result)
     if(result.status == true) {
-      document.querySelector('.info').innerHTML = 'Запись добавлена'
+      document.querySelector('.content').innerHTML = `<h1>Сотрудник ${result.fio} добавлен в базу данных</h1>`
+      // document.querySelector('.info').innerHTML = 'Запись добавлена'
+    } else {
+      document.querySelector('.content').innerHTML = `<h1>Ошибка при добавлении сотрудника</h1>`
     }
   }
   createNewWorker(formData)

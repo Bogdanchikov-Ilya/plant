@@ -48,7 +48,7 @@ function changeProductStatus($connect, $action, $workerCode, $productCode) {
         }
         $productName = $product['name'];
 
-        $changeStatusRes = mysqli_query($connect, "UPDATE `products` SET `status` = 'На складе', `owner` = 'Кладовщик' WHERE `products`.`barcode` = '$productCode';");
+        $changeStatusRes = mysqli_query($connect, "UPDATE `products` SET `status` = 'На складе', `owner` = 'Кладовщик', `who_add` = '$workerFio' WHERE `products`.`barcode` = '$productCode';");
         if($changeStatusRes == true){
             http_response_code(201);
             $res = ['status' => true, 'resText' => 'Сотрудник ' . '«' . $workerFio . '»' . ' вернул на склад - ' .  '«' . $productName . '»'];

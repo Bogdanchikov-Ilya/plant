@@ -11,10 +11,16 @@
   <!--  <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>-->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/main-page.css">
-  <title>QR</title>
+  <title>Кладовщик</title>
 </head>
 <body>
-<script>localStorage.clear()</script>
+<script>
+  if(localStorage.getItem('auth') == 'true'){
+    console.log('Авторизовано')
+  } else {
+    location.href = window.location.origin + '/auth.html';
+  }
+</script>
 <div class="loader__wrapper">
   <div class="loader"></div>
 </div>
@@ -22,8 +28,6 @@
   <div class="container">
     <div class="header-wrapper">
       <a href="index.php">Главная</a>
-      <!--        <a href="create-worker.html">Добавить сотрудника</a>-->
-      <!--        <a href="create-item.html">Добавить товар</a>-->
       <a href="storekeeper.html">Кладовщик</a>
     </div>
   </div>
@@ -34,22 +38,19 @@
       <div class="content">
         <a class="main-btn" href="read-worker.html"><button class="do-btn">Получить</button></a>
         <a class="main-btn" href="read-worker.html"><button class="do-btn">Сдать</button></a>
+        <br>
+        <br>
+        <a class="main-btn" href="create-worker.html"><button class="do-btn">Добавить сотрудника</button></a>
+        <a class="main-btn" href="create-product.html"><button class="do-btn">Добавить товар</button></a>
+        <br>
+        <br>
+        <a class="main-btn" href="left.php"><button class="do-btn">Остатки на складе</button></a>
+        <a class="main-btn" href="totalProductsWorker.html"><button class="do-btn">Выдано на сотрудника</button></a>
       </div>
-      <!--        <video id="preview"></video>-->
-      <!--        <label for="code">Отсканируйте код товара или введите вручную. В базе есть - Molotok, Otvertka, Printer</label>-->
-      <!--        <form id="form" action="#">-->
-      <!--          <input type="code" required id='code' placeholder="Результат сканирования">-->
-      <!--          <button>Сканировать с камеры</button>-->
-      <!--          <input type="submit" class="btn-form">-->
-      <!--        </form>-->
-      <!--        <span class="array"></span>-->
     </div>
   </div>
 </main>
 
-<!--  <script src="scripts/updateItem.js"></script>-->
-<!--  <script src="scripts/scaner.js"></script>-->
-<!--  <script src="scripts/send-form.js"></script>-->
 <script src="scripts/setAction.js"></script>
 </body>
 </html>

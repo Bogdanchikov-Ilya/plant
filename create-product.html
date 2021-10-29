@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/barcodes/JsBarcode.code128.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <title>Создать сотрудника</title>
+</head>
+<body>
+<div class="loader__wrapper">
+  <div class="loader"></div>
+</div>
+  <header>
+    <div class="container">
+      <div class="header-wrapper">
+        <a href="index.php">Главная</a>
+        <a href="storekeeper.html">Кладовщик</a>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <div class="content">
+      <form action="#" id="create-item-form" class="create-worker-form">
+        <div class="form-item">
+          <label for="name">Название</label>
+          <input required type="text" id="name">
+        </div>
+        <div class="form-item">
+          <label for="barcode">Значение штрих-кода</label>
+          <input type="text" required id="barcode">
+          <img class="codeimg" id="code128"></img>
+          <!--        <button class="generate-code-btn">Сгенерировать код</button>-->
+        </div>
+        <!--      <div class="form-item">-->
+        <!--        <label for="owner">Ответственный</label>-->
+        <!--        <input type="text" required id="owner">-->
+        <!--      </div>-->
+        <!--      <div class="form-item">-->
+        <!--        <label for="status">Статус</label>-->
+        <!--        <input type="text" required id="status">-->
+        <!--      </div>-->
+        <!--      <div class="form-item">-->
+        <!--        <label for="who_add">Кто внес на склад</label>-->
+        <!--        <input type="text" required id="who_add">-->
+        <!--      </div>-->
+
+        <input type="submit" class="create-object-form" value="Добавить">
+      </form>
+      <span class="info"></span>
+    </div>
+  </div>
+<script src="scripts/generateCode.js"></script>
+<script src="scripts/create-product.js"></script>
+</body>
+</html>
