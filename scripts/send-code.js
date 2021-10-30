@@ -4,7 +4,7 @@ window.onload = async function () {
 }
 
 document.querySelector('#code').addEventListener('input', (e) => {
-  // document.querySelector('#send-code').preventDefault()
+  document.querySelector('.info').innerHTML = ''
   if(document.querySelector('form').classList.contains('worker-code') == true){
     let isWorkerCode = allBarcodes.workers.find(item => item == document.querySelector('#code').value)
     console.log(isWorkerCode)
@@ -36,20 +36,20 @@ document.querySelector('#send-code').addEventListener('submit', (e) => {
   e.preventDefault()
   // document.querySelector('.loader__wrapper').style.display = 'flex'
   // let formData = new FormData()
-  // if(document.querySelector('form').classList.contains('worker-code') == true){
-  //   console.log('worker-code')
-  //   localStorage.setItem('worker-code', document.querySelector('#code').value)
-  //   formData.append('worker-code', localStorage.getItem('worker-code'))
-  //   sendCode(formData)
-  // } else if (document.querySelector('form').classList.contains('product-code') == true) {
-  //   console.log('product-code')
-  //   formData.append('action', localStorage.getItem('action'))
-  //   console.log(localStorage.getItem('action'))
-  //   formData.append('worker-code', localStorage.getItem('worker-code'))
-  //   formData.append('product-code', document.querySelector('#code').value)
-  //   localStorage.clear()
-  //   sendCode(formData)
-  // }
+  if(document.querySelector('form').classList.contains('worker-code') == true){
+    document.querySelector('.info').innerHTML = 'Сотрудник не найден'
+    // localStorage.setItem('worker-code', document.querySelector('#code').value)
+    // formData.append('worker-code', localStorage.getItem('worker-code'))
+    // sendCode(formData)
+  } else if (document.querySelector('form').classList.contains('product-code') == true) {
+    document.querySelector('.info').innerHTML = 'Товар не найден'
+    // formData.append('action', localStorage.getItem('action'))
+    // console.log(localStorage.getItem('action'))
+    // formData.append('worker-code', localStorage.getItem('worker-code'))
+    // formData.append('product-code', document.querySelector('#code').value)
+    // localStorage.clear()
+    // sendCode(formData)
+  }
 })
 
 async function sendCode(a) {
