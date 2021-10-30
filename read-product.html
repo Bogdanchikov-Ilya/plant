@@ -5,6 +5,7 @@
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="scripts/get-barcodes.js"></script>
   <link rel="stylesheet" href="css/style.css">
   <title>Document</title>
 </head>
@@ -25,7 +26,7 @@
     <div class="main-wrapper">
       <form id="send-code" action="#" class="product-code">
         <label class="form-label" for="code">Отсканируйте штрих-код продукта</label>
-        <input class="form-input" required id='code' placeholder="Результат сканирования">
+        <input autofocus class="form-input" required id='code' placeholder="Результат сканирования">
         <button class="camera-scan-btn">Сканировать с камеры</button>
         <input type="submit" class="send-form-btn">
       </form>
