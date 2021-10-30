@@ -33,7 +33,7 @@ document.querySelector('#storekeeperCode').addEventListener('input', (e) => {
 
 document.querySelector('#storekeeper').addEventListener('submit', (e) => {
   e.preventDefault()
-  document.querySelector('.info').innerHTML = 'Невреный код кладовщика'
+  document.querySelector('.info').innerHTML = 'Неверный код'
 //   document.querySelector('.loader__wrapper').style.display = 'flex'
 //   let formData = new FormData()
 //   formData.append('storekeeperCode', document.querySelector('#storekeeperCode').value)

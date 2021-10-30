@@ -203,6 +203,10 @@ table{
   width: 100%;
 }
 
+.info{
+  margin-top: 2px;
+}
+
 @media (max-width: 480px) {
   /*.main-wrapper{*/
   /*  height: 100%;*/

@@ -15,7 +15,7 @@ if($fio == true){
     }
     $res = implode(',', $res);
     http_response_code(201);
-    $result = ['status' => true, 'resText' => 'На сотрудника ' . $fio . ' выдано: ' . $res];
+    $result = ['status' => true, 'fio' => $fio, 'list' => $res];
     echo json_encode($result);
 } else{
     http_response_code(500);
