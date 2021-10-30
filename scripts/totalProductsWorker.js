@@ -33,12 +33,13 @@ async function sendCode(a) {
       return json
     })
   let result = await res
-  console.log(result.list)
+  let arrayProducts = result.list.split(',')
+  console.log(arrayProducts)
   if(result.list){
-    document.querySelector('.main-wrapper').innerHTML = `<h1>На сотрудника <span class="text-primary">${result.fio}</span> выдано:</h1>
-    <ul>
-      <li>${result.list}</li>
-    </ul>`
+    document.querySelector('.main-wrapper').innerHTML = `<h1>На сотрудника <span class="text-primary">${result.fio}</span> выдано: <ul></ul></h1>`
+    arrayProducts.forEach((item) => {
+      document.querySelector('ul').insertAdjacentHTML('beforeend', `<li>${item}</li>`)
+    })
   }else {
     document.querySelector('.main-wrapper').innerHTML = `<h1>На сотрудника <span class="text-primary">${result.fio}</span> ничего не выдано</h1>`
   }
