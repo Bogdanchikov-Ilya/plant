@@ -21,6 +21,7 @@ function changeProductStatus($connect, $action, $workerCode, $productCode) {
 
         $changeStatusRes = mysqli_query($connect, "UPDATE `products` SET `status` = 'Выдан', `owner` = '$workerFio' WHERE `products`.`barcode` = '$productCode';");
         if($changeStatusRes == true){
+            mysqli_query($connect, "UPDATE `products` SET `sum` = `sum` - 1 WHERE `barcode` = '$productCode'");
             http_response_code(201);
             $res = ['status' => true, 'resText' => 'Сотрудник ' . '«' . $workerFio . '»' . ' взял оборудование - ' .  '«' . $productName . '»'];
             return $res;
@@ -51,6 +52,7 @@ function changeProductStatus($connect, $action, $workerCode, $productCode) {
         $changeStatusRes = mysqli_query($connect, "UPDATE `products` SET `status` = 'На складе', `owner` = 'Кладовщик', `who_add` = '$workerFio' WHERE `products`.`barcode` = '$productCode';");
         if($changeStatusRes == true){
             http_response_code(201);
+            mysqli_query($connect, "UPDATE `products` SET `sum` = `sum` + 1 WHERE `barcode` = '$productCode'");
             $res = ['status' => true, 'resText' => 'Сотрудник ' . '«' . $workerFio . '»' . ' вернул на склад - ' .  '«' . $productName . '»'];
             return $res;
         }else{

@@ -31,6 +31,7 @@
               <th scope="col">Штрих-код</th>
               <th scope="col">Ответственный</th>
               <th scope="col">Статус</th>
+              <th scope="col">Количество</th>
               <th scope="col">Кто добавил</th>
             </tr>
             </thead>
@@ -46,6 +47,7 @@
                 <td><?php echo $row["barcode"] ?></td>
                 <td><?php echo $row["owner"]?></td>
                 <td><?php echo $row["status"]?></td>
+                <td><?php echo $row["sum"]?></td>
                 <td><?php echo $row["who_add"]?></td>
               </tr>
             <?php } ?>

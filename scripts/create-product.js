@@ -4,6 +4,7 @@ document.querySelector('#create-item-form').addEventListener('submit', (e) => {
   let formData = new FormData()
   formData.append('name', document.querySelector('#name').value)
   formData.append('barcode', document.querySelector('#barcode').value)
+  formData.append('sum', document.querySelector('#sum').value)
   // formData.append('owner', document.querySelector('#owner').value)
   // formData.append('status', document.querySelector('#status').value)
   // formData.append('who_add', document.querySelector('#who_add').value)

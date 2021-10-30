@@ -4,9 +4,10 @@ require 'connect.php';
 
 $name = $_POST['name'];
 $barcode = $_POST['barcode'];
+$sum = (int)$_POST['sum'];
 
-$res = mysqli_query($connect, "INSERT INTO `products` (`name`, `barcode`, `owner`, `status`, `who_add`) VALUES ('$name', '$barcode', 'Кладовщик', 'На складе', 'Кладовщик')");
-if(json_encode($res) == true) {
+$res = mysqli_query($connect, "INSERT INTO `products` (`name`, `barcode`, `owner`, `status`, `sum`, `who_add`) VALUES ('$name', '$barcode', 'Кладовщик', 'На складе', '$sum', 'Кладовщик')");
+if($res == true) {
     http_response_code(201);
     $res = ['status' => true, 'text' => 'Добавлен продукт ' . $name . ' со штрихкодом - ' . $barcode];
     echo json_encode($res);
