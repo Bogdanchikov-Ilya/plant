@@ -10,7 +10,7 @@ document.querySelector('#code').addEventListener('input', (e) => {
     console.log(isWorkerCode)
     if(isWorkerCode !== undefined) {
       let formData = new FormData()
-      document.querySelector('#send-code').submit()
+      // document.querySelector('#send-code').submit()
       localStorage.setItem('worker-code', document.querySelector('#code').value)
       formData.append('worker-code', localStorage.getItem('worker-code'))
       sendCode(formData)
