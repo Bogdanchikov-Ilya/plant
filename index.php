@@ -9,6 +9,7 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <!--  <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/main-page.css">
   <title>QR</title>
@@ -18,22 +19,22 @@
 <div class="loader__wrapper">
   <div class="loader"></div>
 </div>
-<header>
+<header class="navbar">
   <div class="container">
     <div class="header-wrapper">
-      <a href="index.php">Главная</a>
+      <a href="index.php" class="btn btn-outline-success">Главная</a>
       <!--        <a href="create-worker.html">Добавить сотрудника</a>-->
       <!--        <a href="create-item.html">Добавить товар</a>-->
-      <a href="storekeeper.html">Кладовщик</a>
+      <a href="storekeeper.html" class="btn btn-sm btn-outline-secondary">Кладовщик</a>
     </div>
   </div>
 </header>
 <main>
   <div class="container">
-    <div class="main-wrapper">
+    <div class="main-wrapper main-page">
       <div class="content">
-        <a class="main-btn" href="read-worker.html"><button class="do-btn">Получить</button></a>
-        <a class="main-btn" href="read-worker.html"><button class="do-btn">Сдать</button></a>
+        <a class="main-btn" href="read-worker.html"><button class="do-btn btn btn-primary btn-lg">Получить</button></a>
+        <a class="main-btn" href="read-worker.html"><button class="do-btn btn btn-primary btn-lg">Сдать</button></a>
       </div>
       <!--        <video id="preview"></video>-->
       <!--        <label for="code">Отсканируйте код товара или введите вручную. В базе есть - Molotok, Otvertka, Printer</label>-->

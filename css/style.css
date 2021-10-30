@@ -11,8 +11,11 @@
 }
 
 header{
+  background: #f3f3f3;
   width: 100%;
-  border-bottom: 1px solid gray;
+  -webkit-box-shadow: 0px 15px 15px -19px rgba(34, 60, 80, 0.6);
+  -moz-box-shadow: 0px 15px 15px -19px rgba(34, 60, 80, 0.6);
+  box-shadow: 0px 15px 15px -19px rgba(34, 60, 80, 0.6);
 }
 
 .header-wrapper{
@@ -20,8 +23,12 @@ header{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2vw 0px;
+  padding: 1.2vw 0px;
   /*border: 1px solid red;*/
+}
+
+.header-wrapper > a{
+  font-size: 20px !important;
 }
 
 .main-wrapper{
@@ -41,6 +48,15 @@ form{
   flex-direction: column;
 }
 
+form > #code, form > #storekeeperCode{
+  font-size: 2vw;
+}
+
+
+.form-label{
+  font-size: 2vw;
+}
+
 form > input{
   width: 100%;
   height: 4vw;
@@ -53,6 +69,7 @@ form > button{
   padding: 2vw;
   margin: auto;
   margin-top: 1vw;
+
 }
 
 label{
@@ -135,10 +152,25 @@ label{
 
 .main-wrapper > .content > .main-btn > button{
   margin: auto;
-  font-size: 2vw;
-  width: 40vw;
+  font-size: 2.4vw;  width: 44vw;
   height: auto;
 }
+
+@media (max-width: 480px) {
+  .container{
+    margin: auto;
+    max-width: 90vw;
+  }
+
+  .content{
+    width: 100%;
+  }
+  .main-wrapper > .content > .main-btn > button{
+    width: 100%;
+    font-size: 5vw;
+  }
+}
+
 
 /*read worker code*/
 
@@ -155,6 +187,91 @@ label{
 }
 
 .send-form-btn{
+  font-size: 2vw;
   height: auto;
   padding: 2vw;
+}
+
+
+/*storekeeper*/
+
+.storekeeper > a > button{
+  font-size: 2vw !important;
+}
+
+table{
+  width: 100%;
+}
+
+@media (max-width: 480px) {
+  /*.main-wrapper{*/
+  /*  height: 100%;*/
+  /*}*/
+  .main-page{
+    height: 100vw;
+  }
+  form{
+    height: 100%;
+  }
+  form > #storekeeperCode{
+    margin-bottom: 100%;
+  }
+  form > #code, form > #storekeeperCode{
+    font-size: 4vw;
+    margin-bottom: 100%;
+  }
+  form > input{
+    width: 100%;
+    height: 12vw !important;
+    font-size: 4vw;
+    margin-top: 0.5vw;
+  }
+  form > label{
+    margin-top: 4vw;
+    margin-bottom: 0;
+  }
+  .camera-scan-btn{
+    align-self: self-end;
+    height: 10vw;
+    font-size: 4vw !important;
+    margin-bottom: 2vw !important;
+  }
+  .send-form-btn{
+    font-size: 4vw;
+  }
+  .form-label{
+    font-size: 4vw !important;
+  }
+  .send-form-btn{
+    font-size: 4vw !important;
+  }
+  .storekeeper > a > button{
+    font-size: 6vw !important;
+  }
+  .create-worker-form{
+    height: 100%;
+    display: flex;
+    justify-content: space-between !important;
+    margin-top: 4vw;
+  }
+  .create-worker-form > .form-item{
+    margin-bottom: 1vw;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .create-worker-form > .form-item > input{
+    width: 100% !important;
+  }
+
+  .create-worker-form > .btn {
+    margin-top: auto;
+    height: auto;
+    align-self: flex-end;
+    width: 100%;
+  }
+
+  table {
+    display: block !important;
+  }
 }
