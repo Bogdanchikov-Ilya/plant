@@ -34,21 +34,10 @@ document.querySelector('#code').addEventListener('input', (e) => {
 
 document.querySelector('#send-code').addEventListener('submit', (e) => {
   e.preventDefault()
-  // document.querySelector('.loader__wrapper').style.display = 'flex'
-  // let formData = new FormData()
   if(document.querySelector('form').classList.contains('worker-code') == true){
     document.querySelector('.info').innerHTML = 'Сотрудник не найден'
-    // localStorage.setItem('worker-code', document.querySelector('#code').value)
-    // formData.append('worker-code', localStorage.getItem('worker-code'))
-    // sendCode(formData)
   } else if (document.querySelector('form').classList.contains('product-code') == true) {
     document.querySelector('.info').innerHTML = 'Товар не найден'
-    // formData.append('action', localStorage.getItem('action'))
-    // console.log(localStorage.getItem('action'))
-    // formData.append('worker-code', localStorage.getItem('worker-code'))
-    // formData.append('product-code', document.querySelector('#code').value)
-    // localStorage.clear()
-    // sendCode(formData)
   }
 })
 

@@ -156,20 +156,7 @@ label{
   height: auto;
 }
 
-@media (max-width: 480px) {
-  .container{
-    margin: auto;
-    max-width: 90vw;
-  }
 
-  .content{
-    width: 100%;
-  }
-  .main-wrapper > .content > .main-btn > button{
-    width: 100%;
-    font-size: 5vw;
-  }
-}
 
 
 /*read worker code*/
@@ -207,10 +194,20 @@ table{
   margin-top: 2px;
 }
 
+
+
 @media (max-width: 480px) {
-  /*.main-wrapper{*/
-  /*  height: 100%;*/
-  /*}*/
+  .container{
+    margin: auto;
+    max-width: 90vw;
+  }
+  .content{
+    width: 100%;
+  }
+  .main-wrapper > .content > .main-btn > button{
+    width: 100%;
+    font-size: 5vw;
+  }
   .main-page{
     height: 100vw;
   }
@@ -267,14 +264,12 @@ table{
   .create-worker-form > .form-item > input{
     width: 100% !important;
   }
-
   .create-worker-form > .btn {
     margin-top: auto;
     height: auto;
     align-self: flex-end;
     width: 100%;
   }
-
   table {
     display: block !important;
   }
