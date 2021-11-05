@@ -39,7 +39,6 @@ function changeProductStatus($connect, $action, $workerCode, $productCode) {
             return $res;
         }
         $workerFio = $worker['surname'] . ' ' . $worker['name'] . ' ' . $worker['patronymic'];
-
         $product = mysqli_query($connect, "SELECT * FROM `products` WHERE `barcode` = '$productCode'");
         $product = mysqli_fetch_assoc($product);
         if($product == null) {
