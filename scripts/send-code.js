@@ -1,7 +1,7 @@
 let allBarcodes;
-window.onload = async function () {
+document.addEventListener("DOMContentLoaded", async function() {
   allBarcodes = await getBarcodes()
-}
+});
 
 document.querySelector('#code').addEventListener('input', (e) => {
   document.querySelector('.info').innerHTML = ''
@@ -9,8 +9,9 @@ document.querySelector('#code').addEventListener('input', (e) => {
     let isWorkerCode = allBarcodes.workers.find(item => item == document.querySelector('#code').value)
     console.log(isWorkerCode)
     if(isWorkerCode !== undefined) {
+      document.querySelector('#code').setAttribute("disabled", "disabled");
+      document.querySelector('.loader__wrapper').style.display = 'flex'
       let formData = new FormData()
-      // document.querySelector('#send-code').submit()
       localStorage.setItem('worker-code', document.querySelector('#code').value)
       formData.append('worker-code', localStorage.getItem('worker-code'))
       sendCode(formData)
@@ -19,6 +20,8 @@ document.querySelector('#code').addEventListener('input', (e) => {
     let isProductCode = allBarcodes.products.find(item => item == document.querySelector('#code').value)
     console.log(isProductCode)
     if(isProductCode !== undefined) {
+      document.querySelector('#code').setAttribute("disabled", "disabled");
+      document.querySelector('.loader__wrapper').style.display = 'flex'
       let formData = new FormData()
       // document.querySelector('#send-code').submit()
       console.log('product-code')
@@ -64,5 +67,12 @@ async function sendCode(a) {
     console.log(allBarcodes)
   }
   console.log(result)
-  document.querySelector('.main-wrapper').innerHTML = `<h1 center>${result.res.resText}</h1>`
+  if(result.res.status !== true) {
+    document.querySelector('.main-wrapper').innerHTML = `<h1>${result.res.resText}</h1>`
+  }
+  if(result.res.action == 'takeProduct'){
+    document.querySelector('.main-wrapper').innerHTML = `<h1> Cотрудник <span class="text-primary">${result.res.worker}</span> взял оборудование - <span class="text-primary">«${result.res.product}»</span></h1>`
+  } else if (result.res.action == 'returnProduct') {
+    document.querySelector('.main-wrapper').innerHTML = `<h1> Cотрудник <span class="text-primary">${result.res.worker}</span> вернул на склад - <span class="text-primary">«${result.res.product}»</span></h1>`
+  }
 }

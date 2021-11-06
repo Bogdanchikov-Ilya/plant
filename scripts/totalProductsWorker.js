@@ -1,13 +1,13 @@
 let allBarcodes;
-window.onload = async function () {
+document.addEventListener("DOMContentLoaded", async function() {
   allBarcodes = await getBarcodes()
-}
+});
 
 document.querySelector('#code').addEventListener('input', (e) => {
   document.querySelector('.info').innerHTML = ''
   let isWorkerCode = allBarcodes.workers.find(item => item == document.querySelector('#code').value)
   if(isWorkerCode !== undefined) {
-    console.log('Совпало')
+    document.querySelector('#code').setAttribute("disabled", "disabled");
     let formData = new FormData()
     formData.append('code', document.querySelector('#code').value)
     sendCode(formData)
@@ -20,6 +20,7 @@ document.querySelector('#send-code').addEventListener('submit', (e) => {
 })
 
 async function sendCode(a) {
+  document.querySelector('.loader__wrapper').style.display = 'flex'
   const res = fetch('../php/totalProductsWorker.php', {
     method: 'POST',
     body: a

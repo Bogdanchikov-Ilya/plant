@@ -1,9 +1,10 @@
 let realBarcodes;
-window.onload = async function () {
+document.addEventListener("DOMContentLoaded", async function() {
   realBarcodes = await getRealBarcodes()
-}
+});
 
 async function getRealBarcodes() {
+  document.querySelector('.loader__wrapper').style.display = 'flex'
   const res = fetch('../php/auth.php', {
     method: 'GET'
   })

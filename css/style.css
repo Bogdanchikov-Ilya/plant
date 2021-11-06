@@ -89,21 +89,31 @@
 }
 
 .btn-outline-primary{
+  transition: 0.15s ease-in-out;
   border: 1px solid #007BFF;
   background: white;
   color: #007BFF;
 }
 
 .btn-outline-primary:hover{
+  transition: 0.11s ease-in-out;
   background: #007BFF;
   color: white;
 }
 
 .camera-scan-btn{
-  font-size: 1.5vw;
+  font-size: 1.1vw;
 }
 
 /*forms*/
+
+.text-danger {
+  color: #dc3545;
+}
+
+.text-primary {
+  color: #007bff!important;
+}
 
 .form-control {
   margin-top: 0.900em;
